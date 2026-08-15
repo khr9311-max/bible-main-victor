@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>말씀 성경 통합 포털 | 성경 읽기 · 72구절 · 로마서 암송 · AI 챗봇</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="스마트 10개 다역본 성경 뷰어, 네비게이토 72구절 암송, 로마서 8장 전장 암송, 상황별 성경구절 검색 카카오톡 챗봇까지 한곳에서 만나는 올인원 말씀 포털입니다.">
+    <meta name="keywords" content="말씀성경, 성경통독, 72구절 암송, 로마서 8장 암송, 성경 챗봇, 카카오톡 성경검색, 개역개정, 쉬운성경, NIV, ESV">
+    <meta name="author" content="Victor Word Ministry">
+    <meta name="theme-color" content="#2563eb">
+    
+    <!-- Open Graph (KakaoTalk, Facebook, SNS) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="말씀 성경 통합 포털 (Bible Hub)">
+    <meta property="og:title" content="말씀 성경 통합 포털 | 성경 뷰어 · 암송 · 챗봇 · 후원">
+    <meta property="og:description" content="말씀성경(10개 다역본), 72구절 암송, 로마서 8장 암송, 성경 AI 챗봇을 한곳에서 만나보세요.">
+    <meta property="og:image" content="https://bible-web-kr.vercel.app/icons/icon-512.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Ambient Lighting Background Decor -->
+    <div class="bg-ambient-decor">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+        <div class="blob-3"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="brand-wrap" title="말씀 성경 통합 포털">
+                <div class="brand-icon-box">
+                    <i data-lucide="book-open"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-title">말씀성경 포털</span>
+                    <span class="brand-tagline">Bible & Grace Hub</span>
+                </div>
+            </a>
+
+            <div class="header-actions">
+                <button class="header-btn sponsorship-btn open-sponsor-modal" title="사역 후원하기">
+                    <i data-lucide="heart" style="color:#ef4444; width:16px; height:16px;"></i>
+                    <span>후원하기</span>
+                </button>
+                <button class="header-btn" id="btn-share-hub" title="포털 공유하기">
+                    <i data-lucide="share-2" style="width:16px; height:16px;"></i>
+                    <span>공유</span>
+                </button>
+                <button class="header-btn theme-toggle-btn" id="theme-toggle-btn" title="다크/라이트 테마 변경">
+                    <i data-lucide="moon" id="theme-icon" style="width:18px; height:18px;"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-pill-badge">
+                    <i data-lucide="sparkles"></i>
+                    <span>은혜와 진리가 충만한 말씀의 여정</span>
+                </div>
+
+                <h1 class="hero-main-title">
+                    말씀을 읽고, 마음에 심고,<br>
+                    <span class="gradient-text">삶으로 살아내는 은혜의 공간</span>
+                </h1>
+
+                <p class="hero-description">
+                    스마트 10개 다역본 성경 뷰어부터 네비게이토 72구절 & 로마서 8장 암송,
+                    상황별 성경 검색 챗봇과 따뜻한 사역 후원까지 한곳에서 만나보세요.
+                </p>
+
+                <!-- Ecosystem Quick Stats Banner -->
+                <div class="stats-banner">
+                    <div class="stat-item">
+                        <i data-lucide="book"></i>
+                        <span>10개 다역본 대조 성경</span>
+                    </div>
+                    <div class="stat-item">
+                        <i data-lucide="layers"></i>
+                        <span>72 핵심 구절 암송</span>
+                    </div>
+                    <div class="stat-item">
+                        <i data-lucide="scroll"></i>
+                        <span>로마서 8장 전장 마스터</span>
+                    </div>
+                    <div class="stat-item">
+                        <i data-lucide="bot"></i>
+                        <span>24시간 실시간 AI 챗봇</span>
+                    </div>
+                </div>
+
+                <!-- Daily Grace Scripture Widget -->
+                <div class="daily-verse-card" id="daily-verse-box">
+                    <div class="verse-header">
+                        <span class="verse-tag" id="daily-verse-cat">
+                            <i data-lucide="bookmark"></i> 오늘의 말씀
+                        </span>
+                        <div class="verse-actions">
+                            <button class="verse-ctrl-btn" id="btn-copy-verse" title="말씀 구절 복사">
+                                <i data-lucide="copy" style="width:16px; height:16px;"></i>
+                            </button>
+                            <button class="verse-ctrl-btn" id="btn-refresh-verse" title="다른 은혜의 말씀 보기">
+                                <i data-lucide="refresh-cw" style="width:16px; height:16px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="verse-content">
+                        <p class="verse-text" id="daily-verse-text">"주의 말씀은 내 발에 등이요 내 길에 빛이니이다."</p>
+                        <div class="verse-reference" id="daily-verse-ref">시편 119:105</div>
+                        <div class="verse-english" id="daily-verse-eng">Your word is a lamp to my feet and a light to my path. (Psalm 119:105)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Cards Grid Section -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Core Services</span>
+                    <h2 class="section-title">스마트 성경 & 묵상 서비스</h2>
+                    <p class="section-desc">성도님들의 깊은 말씀 생활과 신앙 성장을 돕는 5가지 맞춤형 서비스를 제공합니다.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- 1. 말씀성경 Card -->
+                    <a href="https://bible-web-kr.vercel.app/" target="_blank" rel="noopener noreferrer" class="service-card card-bible" id="card-service-bible">
+                        <div class="card-decor-circle"></div>
+                        <div class="card-top">
+                            <div class="card-icon">
+                                <i data-lucide="book-marked" style="width:28px; height:28px;"></i>
+                            </div>
+                            <span class="card-category-badge">스마트 다역본 뷰어</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                말씀성경
+                                <i data-lucide="external-link" style="width:18px; height:18px; opacity:0.6;"></i>
+                            </h3>
+                            <p class="card-desc">
+                                개역개정, 쉬운성경, NIV, ESV 등 10개 다역본을 나란히 대조하여 읽고,
+                                원어 스트롱 코드 사전, 관주 탐색, TTS 음성 낭독 및 말씀 카드 제작을 지원합니다.
+                            </p>
+                            <div class="card-features-list">
+                                <span class="feature-tag">10개 다역본 대조</span>
+                                <span class="feature-tag">원어 사전 & 관주</span>
+                                <span class="feature-tag">TTS 음성 낭독</span>
+                                <span class="feature-tag">말씀 카드 제작</span>
+                                <span class="feature-tag">오프라인 PWA</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="cta-link-text">
+                                성경 읽기 시작하기 <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
+                            </span>
+                            <button class="quick-copy-btn" data-url="https://bible-web-kr.vercel.app/" data-title="말씀성경" title="링크 복사">
+                                <i data-lucide="link" style="width:16px; height:16px;"></i>
+                            </button>
+                        </div>
+                    </a>
+
+                    <!-- 2. 72구절 암송 Card -->
+                    <a href="https://72amsong.vercel.app/" target="_blank" rel="noopener noreferrer" class="service-card card-72" id="card-service-72">
+                        <div class="card-decor-circle"></div>
+                        <div class="card-top">
+                            <div class="card-icon">
+                                <i data-lucide="layers" style="width:28px; height:28px;"></i>
+                            </div>
+                            <span class="card-category-badge">네비게이토 핵심 암송</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                72구절 암송
+                                <i data-lucide="external-link" style="width:18px; height:18px; opacity:0.6;"></i>
+                            </h3>
+                            <p class="card-desc">
+                                신앙 성장의 기초가 되는 네비게이토 72 핵심구절을 단계별 빈칸 훈련, 초성 힌트, 음성 듣기로 손쉽게 암기할 수 있습니다.
+                            </p>
+                            <div class="card-features-list">
+                                <span class="feature-tag">주제별 5개 트랙</span>
+                                <span class="feature-tag">초성 힌트 훈련</span>
+                                <span class="feature-tag">단계별 빈칸</span>
+                                <span class="feature-tag">3단계 진도율 관리</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="cta-link-text">
+                                암송 훈련 시작하기 <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
+                            </span>
+                            <button class="quick-copy-btn" data-url="https://72amsong.vercel.app/" data-title="72구절 암송" title="링크 복사">
+                                <i data-lucide="link" style="width:16px; height:16px;"></i>
+                            </button>
+                        </div>
+                    </a>
+
+                    <!-- 3. 로마서 암송 Card -->
+                    <a href="https://romanamsong.vercel.app/" target="_blank" rel="noopener noreferrer" class="service-card card-romans" id="card-service-romans">
+                        <div class="card-decor-circle"></div>
+                        <div class="card-top">
+                            <div class="card-icon">
+                                <i data-lucide="sparkle" style="width:28px; height:28px;"></i>
+                            </div>
+                            <span class="card-category-badge">로마서 8장 마스터</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                로마서 암송
+                                <i data-lucide="external-link" style="width:18px; height:18px; opacity:0.6;"></i>
+                            </h3>
+                            <p class="card-desc">
+                                성경의 다이아몬드라 불리는 로마서 8장 전장 39구절을 생명의 성령의 법과 하나님의 사랑을 묵상하며 체계적으로 정복합니다.
+                            </p>
+                            <div class="card-features-list">
+                                <span class="feature-tag">로마서 8장 전장 39절</span>
+                                <span class="feature-tag">생명의 성령의 법</span>
+                                <span class="feature-tag">인터랙티브 퀴즈</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="cta-link-text">
+                                전장 암송하기 <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
+                            </span>
+                            <button class="quick-copy-btn" data-url="https://romanamsong.vercel.app/" data-title="로마서 8장 암송" title="링크 복사">
+                                <i data-lucide="link" style="width:16px; height:16px;"></i>
+                            </button>
+                        </div>
+                    </a>
+
+                    <!-- 4. 성경구절 검색 챗봇 Card -->
+                    <a href="https://pf.kakao.com/_hRinX" target="_blank" rel="noopener noreferrer" class="service-card card-chatbot" id="card-service-chatbot">
+                        <div class="card-decor-circle"></div>
+                        <div class="card-top">
+                            <div class="card-icon">
+                                <i data-lucide="message-square" style="width:28px; height:28px;"></i>
+                            </div>
+                            <span class="card-category-badge">카카오톡 AI 챗봇</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                성경구절 챗봇
+                                <i data-lucide="external-link" style="width:18px; height:18px; opacity:0.6;"></i>
+                            </h3>
+                            <p class="card-desc">
+                                위로, 감사, 결단 등 내 마음과 상황에 꼭 맞는 성경 말씀을 실시간으로 찾아주는 카카오톡 인공지능 성경 친구입니다.
+                            </p>
+                            <div class="card-features-list">
+                                <span class="feature-tag">카카오톡 간편 추가</span>
+                                <span class="feature-tag">상황별 맞춤 말씀</span>
+                                <span class="feature-tag">24시간 실시간 응답</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="cta-link-text">
+                                채널 추가 & 대화 <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
+                            </span>
+                            <button class="quick-copy-btn" data-url="https://pf.kakao.com/_hRinX" data-title="성경구절 챗봇" title="링크 복사">
+                                <i data-lucide="link" style="width:16px; height:16px;"></i>
+                            </button>
+                        </div>
+                    </a>
+
+                    <!-- 5. 카카오페이 후원하기 Card -->
+                    <div class="service-card card-sponsor open-sponsor-modal" style="cursor:pointer;" id="card-service-sponsor">
+                        <div class="card-decor-circle"></div>
+                        <div class="card-top">
+                            <div class="card-icon">
+                                <i data-lucide="heart" style="width:28px; height:28px;"></i>
+                            </div>
+                            <span class="card-category-badge">사역 & 개발 동역</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                카카오페이 후원
+                                <i data-lucide="sparkles" style="width:18px; height:18px; opacity:0.6;"></i>
+                            </h3>
+                            <p class="card-desc">
+                                더 많은 분들이 스마트하게 말씀을 묵상하고 암송할 수 있도록 웹앱 개발과 서버 운영을 위해 따뜻한 사랑을 보내주세요.
+                            </p>
+                            <div class="card-features-list">
+                                <span class="feature-tag">1초 간편 송금</span>
+                                <span class="feature-tag">서버 운영비 지원</span>
+                                <span class="feature-tag">복음 사역 동역</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="cta-link-text">
+                                사랑으로 후원하기 💛 <i data-lucide="arrow-right" style="width:16px; height:16px;"></i>
+                            </span>
+                            <button class="quick-copy-btn" data-url="https://qr.kakaopay.com/Ej9Bn23wT" data-title="카카오페이 후원" title="링크 복사">
+                                <i data-lucide="link" style="width:16px; height:16px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faith Journey Guide Section -->
+        <section class="guide-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Faith Journey</span>
+                    <h2 class="section-title">말씀과 함께하는 4단계 신앙 루틴</h2>
+                    <p class="section-desc">통합 포털의 서비스들을 유기적으로 활용하여 매일 풍성한 영적 성장을 누려보세요.</p>
+                </div>
+
+                <div class="workflow-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4 class="step-title">말씀 통독 및 연구</h4>
+                        <p class="step-desc"><strong>말씀성경</strong>에서 10개 번역본을 대조하며 깊이 있게 성경을 읽고 묵상합니다.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4 class="step-title">마음에 말씀 심기</h4>
+                        <p class="step-desc"><strong>72구절 암송</strong>과 <strong>로마서 8장</strong>으로 핵심 복음 구절을 마음에 온전히 각인합니다.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h4 class="step-title">일상 속 말씀 동행</h4>
+                        <p class="step-desc"><strong>성경 챗봇</strong>을 통해 기쁨, 슬픔, 위로가 필요한 매 순간 맞춤 성경 말씀을 나눕니다.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h4 class="step-title">복음 전파와 동역</h4>
+                        <p class="step-desc">이웃에게 말씀을 공유하고 <strong>카카오페이 후원</strong>으로 디지털 복음 사역에 함께합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Banner Section -->
+        <section class="support-banner-section">
+            <div class="container">
+                <div class="support-banner-card">
+                    <div class="support-info">
+                        <div class="support-badge">
+                            <i data-lucide="coffee"></i> 사역 개발 동역
+                        </div>
+                        <h3 class="support-title">말씀이 땅 끝까지 전해지도록</h3>
+                        <p class="support-text">
+                            모든 서비스는 성도님들의 영적 성장을 위해 무료로 운영되고 있습니다.<br>
+                            보내주시는 따뜻한 커피 한 잔의 후원은 더 나은 기능 개발과 안정적인 서버 유지에 큰 힘이 됩니다.
+                        </p>
+                    </div>
+                    <div class="support-actions">
+                        <a href="https://qr.kakaopay.com/Ej9Bn23wT" target="_blank" rel="noopener noreferrer" class="support-primary-btn">
+                            <i data-lucide="heart" style="fill:#ffffff;"></i> 카카오페이 바로 후원
+                        </a>
+                        <button class="support-qr-btn open-sponsor-modal">
+                            <i data-lucide="qr-code"></i> QR 코드로 송금하기
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <i data-lucide="book-open" style="color:var(--primary);"></i>
+                    <span>말씀 성경 통합 포털 (Bible Hub)</span>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="https://bible-web-kr.vercel.app/" target="_blank" rel="noopener noreferrer">말씀성경</a></li>
+                    <li><a href="https://72amsong.vercel.app/" target="_blank" rel="noopener noreferrer">72구절 암송</a></li>
+                    <li><a href="https://romanamsong.vercel.app/" target="_blank" rel="noopener noreferrer">로마서 8장 암송</a></li>
+                    <li><a href="https://pf.kakao.com/_hRinX" target="_blank" rel="noopener noreferrer">성경 챗봇</a></li>
+                    <li><a href="https://qr.kakaopay.com/Ej9Bn23wT" target="_blank" rel="noopener noreferrer">카카오페이 후원</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 말씀성경 포털. 오직 하나님의 영광을 위하여 (Soli Deo Gloria).</p>
+                <a href="https://github.com/khr9311-max/bible-main-victor" target="_blank" rel="noopener noreferrer" class="github-link">
+                    <i data-lucide="github" style="width:16px; height:16px;"></i>
+                    <span>GitHub: bible-main-victor</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- KakaoPay QR Modal -->
+    <div class="modal-overlay" id="modal-kakaopay">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" title="닫기"><i data-lucide="x"></i></button>
+            <h3 class="modal-title">
+                <i data-lucide="heart" style="color:#ef4444;"></i> 카카오페이 후원하기
+            </h3>
+            <p class="modal-desc">
+                스마트폰의 카메라나 카카오톡 스캔 기능으로 QR 코드를 비추시면 1초 만에 간편하게 후원하실 수 있습니다.
+            </p>
+            <div class="qr-code-box">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https%3A%2F%2Fqr.kakaopay.com%2FEj9Bn23wT&color=1e293b" alt="카카오페이 후원 QR코드" class="qr-img">
+                <span class="qr-tip">카카오페이 간편 송금 링크: qr.kakaopay.com/Ej9Bn23wT</span>
+            </div>
+            <div class="modal-actions">
+                <a href="https://qr.kakaopay.com/Ej9Bn23wT" target="_blank" rel="noopener noreferrer" class="modal-action-btn primary">
+                    <i data-lucide="external-link"></i> 모바일 카카오페이 바로가기
+                </a>
+                <button class="modal-action-btn secondary" data-close-modal>닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/verses_data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
