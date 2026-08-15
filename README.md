@@ -2,7 +2,7 @@
 
 > **말씀을 읽고, 마음에 심고, 삶으로 살아내는 스마트 올인원 성경 & 묵상 포털**
 
-5가지 성경 및 묵상 서비스([말씀성경](https://bible-web-kr.vercel.app/), [72구절 암송](https://72amsong.vercel.app/), [로마서 8장 암송](https://romanamsong.vercel.app/), [성경 챗봇](https://pf.kakao.com/_hRinX), [카카오페이 후원](https://qr.kakaopay.com/Ej9Bn23wT))를 하나로 묶어주는 모던 웹 포털입니다.
+5가지 성경 및 묵상 서비스([말씀성경](https://bible-web-kr.vercel.app/), [72구절 암송](https://72amsong.vercel.app/), [로마서 8장 암송](https://romanamsong.vercel.app/), [성경구절 챗봇](https://pf.kakao.com/_hRinX), [카카오페이 후원](https://qr.kakaopay.com/Ej9Bn23wT))를 하나로 묶어주는 모던 웹 포털입니다.
 
 ---
 
@@ -13,7 +13,7 @@
 | **📖 말씀성경** | 다양한 주요 번역본(개역개정, 쉬운성경, NIV, ESV 등) 대조, 스마트 관주 탐색, 고품질 TTS 음성 낭독, 묵상 메모 및 형광펜, 오프라인 PWA | [바로가기](https://bible-web-kr.vercel.app/) |
 | **🗂️ 72구절 암송** | 주제별 핵심 72구절 암송 훈련, 단계별 빈칸 채우기, 초성 힌트, 음성 낭독, 3단계 마스터 진도 관리 | [바로가기](https://72amsong.vercel.app/) |
 | **✝️ 로마서 8장 암송** | 성경의 다이아몬드 로마서 8장 전장 39구절 마스터, 생명의 성령의 법 묵상, 인터랙티브 퀴즈 훈련 | [바로가기](https://romanamsong.vercel.app/) |
-| **🤖 성경구절 챗봇** | 기쁨, 슬픔, 위로, 감사 등 내 마음과 상황에 꼭 맞는 성경 말씀을 실시간으로 찾아주는 카카오톡 AI 채널 | [바로가기](https://pf.kakao.com/_hRinX) |
+| **🤖 성경구절 챗봇** | 카카오톡에서 '요1:3'처럼 약어로 입력하면 해당 성경 구절을 즉시 찾아주는 초간편 성경구절 검색 챗봇 | [바로가기](https://pf.kakao.com/_hRinX) |
 | **💛 카카오페이 후원** | 말씀성경 웹앱 개발 및 지속적인 서버 운영을 위한 따뜻한 응원과 사역 동역 (1초 간편 송금) | [후원하기](https://qr.kakaopay.com/Ej9Bn23wT) |
 
 ---

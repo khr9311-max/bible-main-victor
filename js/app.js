@@ -134,7 +134,7 @@ function initCopyAndShare() {
             if (navigator.share) {
                 navigator.share({
                     title: '말씀 성경 통합 포털 (Bible Hub)',
-                    text: '말씀성경, 72구절 암송, 로마서 8장 암송, 성경 챗봇을 한곳에서 만나보세요!',
+                    text: '말씀성경, 72구절 암송, 로마서 8장 암송, 성경구절 챗봇을 한곳에서 만나보세요!',
                     url: window.location.href
                 }).catch(() => {
                     // User canceled or failed, fallback to copy
