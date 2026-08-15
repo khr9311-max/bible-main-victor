@@ -2,7 +2,7 @@
 
 > **말씀을 읽고, 마음에 심고, 삶으로 살아내는 스마트 올인원 성경 & 묵상 포털**
 
-5가지 성경 및 묵상 서비스([말씀성경](https://bible-web-kr.vercel.app/), [72구절 암송](https://72amsong.vercel.app/), [로마서 암송](https://romanamsong.vercel.app/), [성경 챗봇](https://pf.kakao.com/_hRinX), [카카오페이 후원](https://qr.kakaopay.com/Ej9Bn23wT))를 하나로 묶어주는 모던 웹 포털입니다.
+5가지 성경 및 묵상 서비스([말씀성경](https://bible-web-kr.vercel.app/), [72구절 암송](https://72amsong.vercel.app/), [로마서 8장 암송](https://romanamsong.vercel.app/), [성경 챗봇](https://pf.kakao.com/_hRinX), [카카오페이 후원](https://qr.kakaopay.com/Ej9Bn23wT))를 하나로 묶어주는 모던 웹 포털입니다.
 
 ---
 

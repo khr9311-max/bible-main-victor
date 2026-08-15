@@ -46,7 +46,7 @@
     --srv-72-soft: rgba(5, 150, 105, 0.08);
     --srv-72-glow: rgba(16, 185, 129, 0.25);
     
-    /* Service 3: 로마서 암송 (Royal Indigo & Violet) */
+    /* Service 3: 로마서 8장 암송 (Royal Indigo & Violet) */
     --srv-rom-grad: linear-gradient(135deg, #3730a3 0%, #7c3aed 100%);
     --srv-rom-accent: #6366f1;
     --srv-rom-soft: rgba(99, 102, 241, 0.08);
