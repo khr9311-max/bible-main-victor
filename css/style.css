@@ -586,23 +586,9 @@ body {
     transform: scale(1.3);
 }
 
-/* Individual Grid Column Spans */
-/* Row 1: Primary Bible (7 cols) + 72 Memory (5 cols) */
-.card-bible {
-    grid-column: span 7;
-}
-
-.card-bible .card-decor-circle {
-    background: var(--srv-bible-grad);
-}
-
-.card-bible:hover {
-    box-shadow: 0 20px 40px -10px var(--srv-bible-glow);
-    border-color: rgba(37, 99, 235, 0.4);
-}
-
+/* Row 1: 72 Memory (6 cols) + Romans (6 cols) */
 .card-72 {
-    grid-column: span 5;
+    grid-column: span 6;
 }
 
 .card-72 .card-decor-circle {
@@ -614,9 +600,9 @@ body {
     border-color: rgba(16, 185, 129, 0.4);
 }
 
-/* Row 2: Romans (4 cols) + Chatbot (4 cols) + Sponsorship (4 cols) */
+/* Row 2: Chatbot (6 cols) + Sponsorship (6 cols) */
 .card-romans {
-    grid-column: span 4;
+    grid-column: span 6;
 }
 
 .card-romans .card-decor-circle {
@@ -629,7 +615,7 @@ body {
 }
 
 .card-chatbot {
-    grid-column: span 4;
+    grid-column: span 6;
 }
 
 .card-chatbot .card-decor-circle {
@@ -642,7 +628,7 @@ body {
 }
 
 .card-sponsor {
-    grid-column: span 4;
+    grid-column: span 6;
 }
 
 .card-sponsor .card-decor-circle {
@@ -673,7 +659,6 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-.card-bible .card-icon { background: var(--srv-bible-grad); }
 .card-72 .card-icon { background: var(--srv-72-grad); }
 .card-romans .card-icon { background: var(--srv-rom-grad); }
 .card-chatbot .card-icon { background: var(--srv-bot-grad); }
@@ -686,7 +671,6 @@ body {
     border-radius: var(--radius-full);
 }
 
-.card-bible .card-category-badge { background: var(--srv-bible-soft); color: var(--srv-bible-accent); }
 .card-72 .card-category-badge { background: var(--srv-72-soft); color: var(--srv-72-accent); }
 .card-romans .card-category-badge { background: var(--srv-rom-soft); color: var(--srv-rom-accent); }
 .card-chatbot .card-category-badge { background: var(--srv-bot-soft); color: var(--srv-bot-accent); }
@@ -748,7 +732,6 @@ body {
     transition: transform 0.2s ease;
 }
 
-.card-bible .cta-link-text { color: var(--srv-bible-accent); }
 .card-72 .cta-link-text { color: var(--srv-72-accent); }
 .card-romans .cta-link-text { color: var(--srv-rom-accent); }
 .card-chatbot .cta-link-text { color: var(--srv-bot-accent); }
@@ -791,7 +774,7 @@ body {
 
 .workflow-steps {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-top: 40px;
     position: relative;
